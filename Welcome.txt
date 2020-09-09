@@ -1,0 +1,10 @@
+Hi, welcome to Tech Elevator. 
+
+If you're reading this, you have successfully pulled from the c-base respository, which is where I'll put lectures and exercises.
+
+Be sure to thank Joe for his help with getting you setup.
+
+I'll see everyone Monday!
+
+Cheers,
+Katie (the .net instructor currently fulfilling moh prep duties for my friends wedding)

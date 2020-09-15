@@ -12,8 +12,11 @@ namespace Variables_And_Datatypes
 		    1. Create a variable to hold an int and call it numberOfExercises.
 			Then set it to 26.
 		    */
+            int numberOfExercises;
+            numberOfExercises = 26;
 
-            //Console.WriteLine(numberOfExercises);
+
+            Console.WriteLine("Number Of Exercises is set to " + numberOfExercises);
 
             /*
             2. Create a variable to hold a double and call it half.
@@ -32,48 +35,60 @@ namespace Variables_And_Datatypes
             /*
             4. Create a variable called seasonsOfFirefly and set it to 1.
             */
-
+            var seasonOfFirefly;
+            seasonOfFirefly = 1;
             //Console.WriteLine(seasonsOfFirefly);
 
             /*
             5. Create a variable called myFavoriteLanguage and set it to "C#".
             */
+            var myFavoriteLanguage;
+            myFavoriteLanguage = "C#";
 
             //Console.WriteLine(myFavoriteLanguage);
 
             /*
             6. Create a variable called pi and set it to 3.1416.
             */
+            var pi;
+            pi = 3.1416;
 
             //Console.WriteLine(pi);
 
             /*
             7. Create and set a variable that holds your name.
             */
-
+            var name;
+            name = "Juan";
             /*
             8. Create and set a variable that holds the number of buttons on your mouse.
             */
+            var numberButtonsMouse;
+            numberButtonsMouse = 2;
 
             /*
             9. Create and set a variable that holds the percentage of battery left on
             your phone.
             */
-
+            var batteryPhone;
+            batteryPhone = "66%";
             /* EXPRESSIONS */
 
             /*
             10. Create an int variable that holds the difference between 121 and 27.
             */
-
+            int diffNumbers;
+            diffNumbers = 97;
             /*
             11. Create a double that holds the addition of 12.3 and 32.1.
             */
-
+            double addition;
+            addition = 35.4;
             /*
             12. Create a string that holds your full name.
             */
-
+            string name;
+            name = "Juan";
             /*
             13. Create a string that holds the word "Hello, " concatenated onto your
             name from above.

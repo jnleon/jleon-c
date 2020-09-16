@@ -28,7 +28,28 @@ namespace Exercises
          */
         public string YourCakeAndEatItToo(double mealAmount, bool isBirthday)
         {
-            return "";
+            if (isBirthday == true)
+            {
+                if (mealAmount < 5)
+                    return "standard";
+                if (mealAmount <= 10)
+                    return "special";
+
+
+                else if (mealAmount >= 10)
+                    return "ginormous";
+            }
+            else if (isBirthday == false )
+                if (mealAmount <= 10)
+                    return "standard";
+                else if (mealAmount > 10 && mealAmount <= 15)
+                    return "special";
+
+            return "ginormous";
+
+        }
+            
         }
     }
-}
+
+

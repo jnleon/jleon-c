@@ -6,7 +6,7 @@ namespace expressions_exercises
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hi!");
         }
     }
 }

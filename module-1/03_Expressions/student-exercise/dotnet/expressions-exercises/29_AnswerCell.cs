@@ -19,6 +19,11 @@ namespace Exercises
          */
         public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
         {
+            if (isAsleep)
+                return false;
+            if ((isMorning && isMom) || !isMorning)
+                return true;
+
             return false;
         }
     }

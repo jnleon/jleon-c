@@ -17,6 +17,9 @@ namespace Exercises
          */
         public bool More20(int n)
         {
+            if ((n - 2) % 20 == 0 || (n-1)%20 ==0)
+             return true;
+            
             return false;
         }
 

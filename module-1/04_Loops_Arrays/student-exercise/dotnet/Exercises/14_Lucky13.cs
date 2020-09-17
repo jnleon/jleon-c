@@ -16,8 +16,17 @@ namespace Exercises
          */
         public bool Lucky13(int[] nums)
         {
-            return false;
+            for (int i = 0; i < nums.Length; i++)
+                if (nums[i] == 3  || nums[i] == 1) 
+                    return false;
+
+
+
+            return true;
+        }
+
+        
         }
 
     }
-}
+

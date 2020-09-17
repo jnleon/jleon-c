@@ -16,8 +16,11 @@ namespace Exercises
          */
         public int Sum3(int[] nums)
         {
-            return 0;
-        }
+            int sum3 = nums[0] + nums[1] + nums[2];
+            return sum3;
 
+
+
+        }
     }
 }

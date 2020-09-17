@@ -16,6 +16,17 @@ namespace Exercises
          */
         public bool Sum28(int[] nums)
         {
+            int ifAddeight = 0;
+            for (int i = 0; i < nums.Length; i++) {
+                if (nums[i] == 2)
+                {
+                    ifAddeight += 2;
+                }
+            }
+            if (ifAddeight == 8)
+            return true;
+
+
             return false;
         }
 

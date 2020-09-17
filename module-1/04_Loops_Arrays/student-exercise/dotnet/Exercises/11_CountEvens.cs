@@ -17,7 +17,14 @@ namespace Exercises
          */
         public int CountEvens(int[] nums)
         {
-            return 0;
+            int count = 0;                  //set count evens = 0
+
+            for (int i = 0; i < nums.Length; i++)  //loop through array
+            {
+                if (nums[i] % 2 == 0)       //if element is even add one to the count of evens
+                    count += 1;
+            }                            //return count
+            return count;
         }
 
     }

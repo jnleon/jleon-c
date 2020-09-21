@@ -13,7 +13,7 @@ namespace LinearConvert
 
             Console.WriteLine("Is the measurement in (m)eter, or (f)eet?");
             string morF = Console.ReadLine();
-            if (morF == "m")
+            if (morF == "M" || morF == "m")
 
 
 

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection.Metadata;
 
 namespace TempConvert
 {
@@ -16,23 +15,14 @@ namespace TempConvert
 
             Console.WriteLine("Is the temperature in (C)elsius, or (F)ahrenheit? :");
             string orF = Console.ReadLine() ;
-            if (orF == "C") 
-            
+            if (orF == "C" || orF =="c" ) 
+         
             
               
             Console.WriteLine("{0}C is {1}F", temperatureGiven, Math.Round((double)(temperatureGiven * 1.8) + 32),2);  // give calculation variable to make it prettier
             
                 else 
                 Console.WriteLine("{0}F is {1}C", temperatureGiven, Math.Round((double)((temperatureGiven -32) / 1.8), 2));
-
-
-          
-            // tempCelsius = ((tempFahrenheit - 32) / 1.8)
-            // tempFahrenheit = ((tempCelsius *1.8) +32);
-
-
-
-
         }
     }
 }

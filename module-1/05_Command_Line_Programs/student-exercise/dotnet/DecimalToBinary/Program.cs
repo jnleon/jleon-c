@@ -6,7 +6,7 @@ namespace DecimalToBinary
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter a series of integers values (seperated by a space): ");
+            Console.WriteLine("Please enter a series of integers values (seperated by a space) : ");
             string input = Console.ReadLine();
             string[] strNumbers = input.Split(" ");
 
@@ -26,6 +26,7 @@ namespace DecimalToBinary
                     number /= 2;
                     result +=  remainder;
         }return result;
-    }
+   
+        }
 }
     }

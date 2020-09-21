@@ -21,9 +21,7 @@ namespace Fibonacci
                     Console.Write(i);
 
             }
-
             /*
-
             int[] fibothing = new int[fiboNumber];
 
             fibothing[0] = 0;

@@ -16,8 +16,8 @@ namespace Exercises
          StringYak("yak123ya") → "123ya"
          */
         public string StringYak(string str)
-        {
-            return null;
+        {  
+            return str.Replace("yak", "");
         }
     }
 }

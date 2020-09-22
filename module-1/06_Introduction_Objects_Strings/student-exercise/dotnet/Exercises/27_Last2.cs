@@ -17,7 +17,19 @@ namespace Exercises
          */
         public int Last2(string str)
         {
-            return 0;
+
+            if (str.Length <= 2)
+                return 0;
+         
+            string last2Chars = str.Substring(str.Length - 2);
+            int last2count = 0;                                     //for charac of index of str
+                                                                    // at  0 
+            for (int i = 0; i < str.Length - 1; i++)                                                          //coompared to last two
+            {
+                if (str[i] == last2Chars[0] && str[i + 1] == last2Chars[1])                                                           //next string index + 1 comapred the last 
+                    last2count++;
+            }
+            return last2count -1;
         }
     }
 }

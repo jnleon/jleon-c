@@ -17,8 +17,28 @@ namespace Exercises
          */
         public string FrontTimes(string str, int n)
         {
-            return null;
+            String result = "";
+            if(str.Length < 3)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    result = result + str.Substring(0);
+                }
+                return result;
+            }
+            for (int i = 0; i < n; i++)
+            {
+                result = result + str.Substring(0,3);
+            }
+            return result;
+     
+          /*  AssertEquals("Input: FrontTimes(\"Abc\", 3)", "AbcAbcAbc", exercises.FrontTimes("Abc", 3));
+            AssertEquals("Input: FrontTimes(\"Ab\", 4)", "AbAbAbAb", exercises.FrontTimes("Ab", 4));
+            AssertEquals("Input: FrontTimes(\"A\", 4)", "AAAA", exercises.FrontTimes("A", 4));
+            AssertEquals("Input: FrontTimes(\"\", 4)", "", exercises.FrontTimes("", 4));
+            AssertEquals("Input: FrontTimes(\"Abc\", 0)", "", exercises.FrontTimes("Abc", 0));*/
         }
+    }
 
     }
-}
+

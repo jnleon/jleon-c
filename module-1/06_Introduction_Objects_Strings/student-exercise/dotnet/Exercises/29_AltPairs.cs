@@ -16,7 +16,21 @@ namespace Exercises
          */
         public string AltPairs(string str)
         {
-            return null;
+            int pairCounter = 0;
+            string pairString = "";
+
+            for (int i = 0; i < str.Length; i++) {
+                if (pairCounter == 2)
+                {
+                    i += 1;
+                        pairCounter = 0;
+                    continue;
+
+                }
+                pairString += str[i];
+                pairCounter++;
+            } 
+            return pairString;
         }
     }
 }

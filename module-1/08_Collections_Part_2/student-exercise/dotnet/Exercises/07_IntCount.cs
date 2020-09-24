@@ -21,7 +21,21 @@ namespace Exercises
          */
         public Dictionary<int, int> IntCount(int[] ints)
         {
-            return null;
+            Dictionary<int, int> newDic3 = new Dictionary<int, int>();
+
+            for (int i = 0; i < ints.Length; i++)
+            {
+                if (!newDic3.ContainsKey(ints[i]))
+                {                                        //if its not inside newDic3 add it
+                    newDic3.Add(ints[i], i);           //if the word isnt there, add it, 
+                    newDic3[ints[i]] = 1;              // give it a value of 1
+                }
+                else
+                    newDic3[ints[i]] += 1;             //Add In one more value                            
+
+            }
+            return newDic3;
         }
     }
-}
+    }
+

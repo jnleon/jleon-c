@@ -32,7 +32,24 @@ namespace Exercises
          */
         public double IsItOnSale(string itemNumber)
         {
-            return -1.0;
+            Dictionary<string, double> house = new Dictionary<string, double>();
+            house["KITCHEN4001"] = 0.20;
+            house["GARAGE1070"] = 0.15;
+            house["LIVINGROOM"] = 0.10;
+            house["KITCHEN6073"] = 0.40;
+            house["BEDROOM3434"] = 0.60;
+            house["BATH0073"] = 0.15;
+
+            if (itemNumber == null)
+            {
+                return 0.00;
+            }
+            itemNumber = itemNumber.ToUpper();
+            if (house.ContainsKey(itemNumber))
+            {
+                return house[itemNumber];
+            }
+            return 0.00 ;
         }
     }
-}
+    }

@@ -20,8 +20,27 @@ namespace Exercises
          */
         public Dictionary<string, int> ConsolidateInventory(Dictionary<string, int> mainWarehouse,
             Dictionary<string, int> remoteWarehouse)
+
         {
-            return null;
+            var totalWareHouse= mainWarehouse.Union(remoteWarehouse);
+            Dictionary<string, int> Dic5 = new Dictionary<string, int>();
+
+            foreach (KeyValuePair<string, int>keyValue in totalWareHouse)
+            {
+                if (!mainWarehouse.ContainsKey(keyValue.Key))
+                {
+                    mainWarehouse[keyValue.Key] = 0;
+                }
+
+                if (!remoteWarehouse.ContainsKey(keyValue.Key))
+                {
+                    remoteWarehouse[keyValue.Key] = 0;
+                    Dic5[keyValue.Key] = mainWarehouse[keyValue.Key] + remoteWarehouse[keyValue.Key];
+                }
+
+            }return Dic5; //I found the name funny had to keep it going, im sorry.
+       
+        
         }
     }
 }

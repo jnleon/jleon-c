@@ -22,7 +22,18 @@ namespace Exercises
          */
         public Dictionary<string, int> WordCount(string[] words)
         {
-            return null;
+            Dictionary<string, int> newDic2 = new Dictionary<string, int>();
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (!newDic2.ContainsKey(words[i])) {   //if its not inside newDic2 add it
+                    newDic2.Add(words[i], i);           //if the word isnt there, add it, 
+                    newDic2[words[i]] = 1;              // give it a value of 1
+                }
+                else
+                    newDic2[words[i]] += 1;             //Add In one more value                            
+           
+            }return newDic2;               
         }
     }
-}
+}       

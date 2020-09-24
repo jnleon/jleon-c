@@ -18,7 +18,15 @@ namespace Exercises
          */
         public Dictionary<string, string> BeginningAndEnding(string[] words)
         {
-            return null;
+            Dictionary<string, string> newDic = new Dictionary<string, string>();
+               
+            for (int i = 0; i < words.Length; i++)
+            {                                                        //each item in the array
+                newDic[words[i].Substring(0, 1)] = words[i].Substring(words[i].Length - 1);
+                                                             
+               // c o d e 
+            }
+                return newDic;
         }
     }
 }

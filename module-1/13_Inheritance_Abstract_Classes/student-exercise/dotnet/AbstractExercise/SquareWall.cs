@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AbstractExercise
+{
+    public class SquareWall : RectangleWall
+    {
+        public int SideLength { get; }
+        public SquareWall(string name, string color, int sideLength) : base(name, color, length:sideLength, height:sideLength)
+        {
+            SideLength = sideLength;
+        }
+        public override string ToString()
+        {
+            return Name + " (" + SideLength + "x" + SideLength + ") square";
+        }
+    }
+}

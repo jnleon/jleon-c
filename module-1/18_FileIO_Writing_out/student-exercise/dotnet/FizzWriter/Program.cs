@@ -6,7 +6,8 @@ namespace FizzWriter
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("FizzBuzz.txt has been created.");
+            Fizzbuzz.FizzBuzz();
         }
     }
 }

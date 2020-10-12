@@ -6,10 +6,5 @@ namespace FileSplitter
 {
     class FileSplitter
     {
-
-      
-
-
-
     }
 }

@@ -19,6 +19,7 @@ C:\Users\Student\workspace\jleon-c\module-1\18_FileIO_Writing_out\student-exerci
 
             Console.WriteLine("How many lines of text (max) should there be in the split files?");
             
+
             int linestext = Convert.ToInt32(Console.ReadLine());
             int lineCount = File.ReadAllLines(filePath).Length;
 

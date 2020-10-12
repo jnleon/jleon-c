@@ -15,16 +15,23 @@ namespace Exercises
          Has22([2, 1, 2]) → false
          */
         public bool Has22(int[] nums)
-        {
-          
-            for (int i = nums.Length -1; i >=1; i --)
-                
-                if (nums[i -1] == 2 )
-                        if (nums[i] == 2)
+        {                                                           //create a boolean if previoys number 2
+           
+              for (int i = nums.Length -1; i >=1; i --)
 
-                        return true;
-                
-            return false;
+                  if (nums[i -1] == 2 )
+                          if (nums[i] == 2)
+
+                          return true;
+
+              return false;
+
+            /*  bool previousWasTwo = false;
+                                                                         //loop thorught he array
+                                                                         //if this elemnt is ==2 and previousWasTwo was 2 return true
+                                                                            //otherwise if this element is 2 then set previousWasTwo to true
+                                                                            // after the loop if we didnt return true, its not there, return false
+            */
         }
 
     }

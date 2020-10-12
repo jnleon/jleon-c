@@ -14,7 +14,13 @@ namespace Lecture.Farming
         /// <summary>
         /// The farm animal's name.
         /// </summary>
-        public string Name { get; }
+        public string Type { get; }
+
+        //JP , SLickmahoney, 2pac
+        public string Name { get; set; }
+
+        public List<string> Food { get; set; } = new List<string>();
+
 
         /// <summary>
         /// Creates a new farm animal.
@@ -22,7 +28,7 @@ namespace Lecture.Farming
         /// <param name="name">The name which the animal goes by.</param>
         public FarmAnimal(string name)
         {
-            this.Name = name;
+            this.Type = name;
         }
 
         /// <summary>

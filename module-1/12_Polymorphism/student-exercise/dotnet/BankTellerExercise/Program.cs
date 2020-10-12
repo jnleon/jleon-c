@@ -6,7 +6,6 @@ namespace BankTellerExercise
     {
         static void Main(string[] args)
         {
-
         }
     }
 }

@@ -8,6 +8,6 @@ namespace Lecture.Farming
     {
         decimal Price { get; }
 
-        string Name { get; }
+        string Type { get; }
     }
 }

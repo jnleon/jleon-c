@@ -22,6 +22,49 @@ namespace TestableClasses.Classes.Tests
         //.IsNull()
 
 
-        
+        [TestMethod]
+        public void MakeAbbaTest()
+        {
+            /// makeAbba("Hi", "Bye") → HiByeByeHi
+            ///makeAbba("What", "Up") → "WhatUpUpWhat"
+
+            /// makeAbba("Yo", "Alice") → "YoAliceAliceYo"
+
+            //ARANGEEE
+
+            StringExercises stringExercises = new StringExercises();
+            
+            //ACTTTTT
+            string result = stringExercises.MakeAbba("Hi", "Bye");
+
+            //ASSERTTTT
+            Assert.AreEqual("HiByeByeHi", result);
+
+
+            Assert.AreEqual("YoAliceAliceYo", stringExercises.MakeAbba("Yo", "Alice"));
+
+            Assert.AreEqual("WhatUpUpWhat", stringExercises.MakeAbba("What", "Up"));
+
+
+
+
+        }
+        [TestMethod]
+        public void FirstTwoTest()
+        {
+        // firstTwo("Hello") → "He"	
+        // firstTwo("abcdefg") → "ab"
+        //firstTwo("ab") → "ab"
+
+
+
+            StringExercises FirstTwoTest = new StringExercises();
+            Assert.AreEqual("He", FirstTwoTest.FirstTwo("Hello"));
+            Assert.AreEqual("ab", FirstTwoTest.FirstTwo("abcdefg"));
+            Assert.AreEqual("ab", FirstTwoTest.FirstTwo("ab"));
+            Assert.AreEqual("", FirstTwoTest.FirstTwo(""));
+
+
+        }
     }
 }

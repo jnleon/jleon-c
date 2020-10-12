@@ -16,13 +16,10 @@ namespace Exercises
          */
         public string StringBits(string str)
         {
-
-
             string s1 = ".NET";
             s1.ToLower();
 
             Console.WriteLine(s1);
-
 
 
             int len = str.Length;

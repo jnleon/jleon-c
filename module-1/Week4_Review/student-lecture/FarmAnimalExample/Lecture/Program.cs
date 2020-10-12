@@ -49,10 +49,10 @@ namespace Lecture
             //print the sellable things
             //for your exercises, you are supposed to line things up
             Console.WriteLine("Sellable stuff\n\n");
-            Console.WriteLine("{0,15} {1,5}", "Name", "Price");
+            Console.WriteLine("{0,15} {1,5}", "Type", "Price");
             foreach (ISellable item in yardSale)
             {
-                Console.WriteLine("{0,-15} {1,-5:C}",item.Name, item.Price);
+                Console.WriteLine("{0,-15} {1,-5:C}",item.Type, item.Price);
             }
 
             Console.ReadLine();
@@ -60,7 +60,7 @@ namespace Lecture
 
         private static void SingTheVerse(ISingable item)
         {
-            Console.WriteLine("And on his farm there was a " + item.Name + " ee ay ee ay oh");
+            Console.WriteLine("And on his farm there was a " + item.Type + " ee ay ee ay oh");
             Console.WriteLine("With a " + item.MakeSoundTwice() + " here and a " + item.MakeSoundTwice() + " there");
             Console.WriteLine("Here a " + item.MakeSoundOnce() + ", there a " + item.MakeSoundOnce() + " everywhere a " + item.MakeSoundTwice());
             Console.WriteLine("Old Macdonald had a farm, ee ay ee ay oh");

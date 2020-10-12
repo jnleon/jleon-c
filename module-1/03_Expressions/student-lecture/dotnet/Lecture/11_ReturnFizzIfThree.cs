@@ -16,7 +16,11 @@ namespace Lecture
         */
         public string ReturnFizzIfThree(int number)
         {
-            return null;
+            if (number == 3)
+                return "Fizz";
+
+                    return "";
+        
         }
     }
 }

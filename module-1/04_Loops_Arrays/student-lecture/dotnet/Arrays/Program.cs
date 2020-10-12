@@ -48,6 +48,21 @@ namespace Arrays
             names[names.Length - 1] = "Josh";
 
             Console.ReadLine();
+
+
+            for (int i = 0; i < names.Length; i++)
+            {
+                Console.Write("at index" + i);
+                Console.WriteLine(names[i]);
+            }
+            Console.ReadLine();
+
+            string[] instructors = { "Josh", "David", "Craig" };
+            for (int i = 0; i < instructors.Length; i++)
+            {
+                Console.WriteLine(instructors[i + 1]);
+            }
+
         }
     }
 }

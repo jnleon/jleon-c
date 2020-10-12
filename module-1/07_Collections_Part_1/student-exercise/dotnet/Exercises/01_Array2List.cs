@@ -17,6 +17,23 @@ namespace Exercises
         public List<string> Array2List(string[] stringArray)
         {
 
+            Dictionary<string, int> animalNumberLegs = new Dictionary<string, int>
+
+    {
+
+        { "Dog", 4 },
+
+        { "Fish", 0 },
+
+        { "Bear", 2 }
+
+    };
+
+            animalNumberLegs["Bear"] = 4;
+
+            Console.WriteLine(animalNumberLegs);
+
+
             List<string> myNewList = new List<string>(stringArray);       
              return myNewList;
 

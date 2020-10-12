@@ -18,9 +18,25 @@ namespace Exercises
          */
         public int Blackjack(int a, int b)
         {
-            return 0;
-        }
 
+
+            if (a > 21)
+            {
+                if (b > 21)
+                {
+                    return 0;
+                }
+                return b;
+            }
+            if (a < b && b <= 21)
+                return b;
+            
+            
+            return a;
+        }
+       
 
     }
 }
+
+    

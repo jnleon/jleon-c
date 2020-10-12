@@ -6,12 +6,10 @@ namespace BankTellerExercise
         {
 
         }
-
         public SavingsAccount(string accountHolder, string accountNumber, int balance) : base(accountHolder, accountNumber, balance)
         {
 
         }
-
         public override int Withdraw(int amountToWithdraw)
         {
             // only perform transaction of positive $ and room for fee

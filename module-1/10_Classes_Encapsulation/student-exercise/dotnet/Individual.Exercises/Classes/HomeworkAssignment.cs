@@ -2,6 +2,79 @@
 {
     public class HomeworkAssignment
     {
+
+
+		// ###########################
+
+		// Alpha.cs
+
+		// ###########################
+
+		public class Alpha
+		{
+
+
+
+			public virtual string GetOpinion()
+			{
+
+				return "Alpha is best!";
+
+			}
+
+		}
+
+
+
+		// ###########################
+
+		// Bravo.cs
+
+		// ###########################
+
+		public class Bravo : Alpha
+		{
+
+			public override string GetOpinion()
+			{
+
+				return "Bravo is best!";
+
+			}
+
+		}
+
+
+
+		// ###########################
+
+		// Charlie.cs
+
+		// ###########################
+
+		public class Charlie : Bravo
+		{
+
+
+
+		}
+
+
+
+		// ###########################
+
+		// Delta.cs
+
+		// ###########################
+
+		public class Delta : Alpha
+		{
+
+
+
+		}
+
+
 		public int EarnedMarks { get; set; }      // Gets or sets the total number of correct marks submitter received on the assignment.
 		public int PossibleMarks { get; private set; }                       // Gets the number of possible marks on the assignment.
 		public string SubmitterName { get; private set; }                 // Gets or sets the submitter's name for the assignment.

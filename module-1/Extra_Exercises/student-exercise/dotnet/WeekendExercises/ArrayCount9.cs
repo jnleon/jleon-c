@@ -16,7 +16,11 @@ namespace Exercises
           */
         public int ArrayCount9(int[] nums)
         {
-            return 0;
+           int numNine = 0;
+            for (int i = 0; i < nums.Length; i++)
+                if (nums[i] == 9)
+                    numNine += 1;
+            return numNine;
         }
     }
 }

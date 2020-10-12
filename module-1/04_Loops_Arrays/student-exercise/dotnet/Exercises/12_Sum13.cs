@@ -20,11 +20,12 @@ namespace Exercises
         {
             int count = 0;                  //set count evens = 0
 
-            for (int i = 0; i < nums.Length; i++)  //loop through 
-            {
-                if (nums[i] != 13)
-                    count += nums[i];
-                if (i > 0 && nums[i - 1] == 13)
+            for (int i = 0; i < nums.Length; i++)  //check if the element is index 0 is 13, if not , then add it to the sum
+             {
+                if (nums[i] != 13)                   // if that number is not 13 and the previos element is not 13, add it to the sum
+                    count += nums[i];           //loop through the array STARTING INDEX 1
+                
+                if (i > 0 && nums[i - 1] == 13)        
                     count -= nums[i];
             }
             return count;

@@ -21,10 +21,6 @@ namespace Exercises
                 if (str.Substring(i, 2).Equals("xx"))
 
                     numX++;
-
-
-
-
             return numX;
         }
     }

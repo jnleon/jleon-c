@@ -14,6 +14,23 @@ namespace Lecture.Aids
         */
         public static void WritingAFile()
         {
+            string directory = Environment.CurrentDirectory;
+            string filename = "output.txt";
+            string fullPath = Path.Combine(directory, filename);
+
+            using (StreamWriter sw = new StreamWriter(fullPath, true))
+            {
+                sw.WriteLine("Hello");
+                sw.WriteLine("Hi bro");
+                sw.WriteLine("AAAAAAAAAAAAAA");
+                sw.WriteLine("Hello");
+                sw.Write("Same line:)))");
+
+
+
+            } 
+
+
 
 
             // After the using statement ends, file has now been written

@@ -16,7 +16,6 @@ namespace Exercises
          */
         public string StringSplosion(string str)
         {
-
             int len = str.Length;
             string temp = "";
 
@@ -26,8 +25,6 @@ namespace Exercises
 
             }
             return temp;
-
-
         }
     }
 }

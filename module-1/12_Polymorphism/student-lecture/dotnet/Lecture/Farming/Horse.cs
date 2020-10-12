@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Lecture.Farming
 {
-    public class Horse : FarmAnimal
+    public class Horse : FarmAnimal, ISellable
     {
-        /// <summary>
-        /// Creates a new horse.
-        /// </summary>
-        /// <param name="name">The name which the horse goes by.</param>
+        public decimal Price { get; } = 50M;
+
+
+        
         public Horse() : base("HORSE")
         {
         }

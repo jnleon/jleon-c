@@ -7,9 +7,7 @@ namespace Lecture
     {
         static void Main(string[] args)
         {
-
-            Console.Write("Press enter to finish");
-            Console.ReadLine();
+            WritingTextFiles.WritingAFile();
         }
     }
 }

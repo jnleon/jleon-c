@@ -52,7 +52,7 @@ namespace Lecture
             Console.WriteLine("{0,15} {1,5}", "Name", "Price");
             foreach (ISellable item in yardSale)
             {
-                Console.WriteLine("{0,-15} {1,-5:C}",item.Name, item.Price);
+                Console.WriteLine("{0,15} {1,-5:C}",item.Name, item.Price);
             }
 
             Console.ReadLine();

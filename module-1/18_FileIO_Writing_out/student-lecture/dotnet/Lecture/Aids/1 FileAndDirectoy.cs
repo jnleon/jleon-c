@@ -43,6 +43,7 @@ namespace Lecture.Aids
                 // Creating a directory
                 Directory.CreateDirectory(@"C:\TestDirectory");
 
+
                 // Getting a list of directories within a directory
                 // One could write a for-loop to print each directory out
                 string[] subDirectories = Directory.GetDirectories(@"C:\TestDirectory\SubDirectory");
@@ -81,8 +82,5 @@ namespace Lecture.Aids
                 File.Delete(FilePath);
             }
         }
-
-
-
     }
 }

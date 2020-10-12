@@ -16,6 +16,9 @@ namespace Variables_And_Datatypes
             numberOfExercises = 26;
 
 
+            int a = 7 / 2;
+            Console.WriteLine(a);
+
             Console.WriteLine("Number Of Exercises is set to " + numberOfExercises);
 
             /*

@@ -9,11 +9,9 @@
         public CheckingAccount(string accountHolderName, string accountNumber) : base(accountHolderName, accountNumber)
         {
         }
-        public CheckingAccount(string AccountHolderName, string AccountNumber, decimal Balance):base(AccountHolderName, AccountNumber, Balance)
-        { 
+        public CheckingAccount(string AccountHolderName, string AccountNumber, decimal Balance) : base(AccountHolderName, AccountNumber, Balance)
+        {
         }
-
-
         public override decimal Withdraw (decimal amountToWithdraw)
         {
             decimal overdraftFee = 10;

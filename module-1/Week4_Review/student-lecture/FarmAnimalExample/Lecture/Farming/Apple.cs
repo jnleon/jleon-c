@@ -8,7 +8,7 @@ namespace Lecture.Farming
     {
         public decimal Price { get; } = .5M;
 
-        public string Name { get; } = "Apple";
+        public string Type { get; } = "Apple";
 
         public string MakeSoundOnce()
         {

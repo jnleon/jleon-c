@@ -96,20 +96,64 @@ namespace AuctionApp
         }
 
         public Auction AddAuction(Auction newAuction) {
-            // place code here
-            throw new NotImplementedException();
+
+            RestRequest request = new RestRequest(API_URL);
+            request.AddJsonBody(newAuction);
+            IRestResponse<Auction> response = client.Post<Auction>(request);
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                Console.WriteLine("Error occurred - unable to reach server.");
+            }
+            else if (!response.IsSuccessful)
+            {
+                Console.WriteLine("Error occurred - received non-success response: " + (int)response.StatusCode);
+            }
+            else
+            {
+                return response.Data;
+            }
+            return null;
         }
 
         public Auction UpdateAuction(Auction auctionToUpdate)
         {
-            // place code here
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest(API_URL + "/" + auctionToUpdate.Id);
+            request.AddJsonBody(auctionToUpdate);
+            IRestResponse<Auction> response = client.Put<Auction>(request);
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                Console.WriteLine("Error occurred - unable to reach server.");
+            }
+            else if (!response.IsSuccessful)
+            {
+                Console.WriteLine("Error occurred - received non-success response: " + (int)response.StatusCode);
+            }
+            else
+            {
+                return response.Data;
+            }
+            return null;
         }
 
         public bool DeleteAuction(int auctionId)
         {
-            // place code here
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest(API_URL + "/" + auctionId);
+          
+            IRestResponse response = client.Delete(request);
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                Console.WriteLine("Error - unable to reach server");
+            }
+            else if (!response.IsSuccessful) //this is my expected result i could also check this response.StatusCode==201
+            {
+                Console.WriteLine("Error - not successful. Response: " + response.StatusCode);
+            }
+            else //it was successful
+            {
+                Console.WriteLine("Delete successful");
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -1,13 +1,6 @@
 {
   "auctions": [
     {
-      "Id": 1,
-      "title": "Bell Computer Monitor",
-      "description": "4K LCD monitor from Bell Computers, HDMI & DisplayPort",
-      "user": "Queenie34",
-      "currentBid": 100.39
-    },
-    {
       "Id": 2,
       "title": "Pineapple Smart Watch",
       "description": "Pears with Pineapple ePhone",
@@ -37,17 +30,13 @@
     },
     {
       "Id": 6,
-      "title": "Fony Headphones",
-      "description": "Listen to music, movies, games and not bother people around you!",
-      "user": "Chester67",
-      "currentBid": 267.38
+      "Title": "miaw",
+      "Description": "miaw",
+      "User": "miaw",
+      "CurrentBid": 201,
+      "IsValid": true
     },
-    {
-      "Id": 7,
-      "title": "Molex Gold Watch",
-      "description": "Definitely not fake gold watch",
-      "user": "Stuart27",
-      "currentBid": 188.39
-    }
+    {},
+    {}
   ]
 }

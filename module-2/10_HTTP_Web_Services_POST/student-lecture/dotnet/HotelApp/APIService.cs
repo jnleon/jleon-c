@@ -87,9 +87,24 @@ namespace HTTP_Web_Services_POST_PUT_DELETE_lecture
             throw new NotImplementedException();
         }
 
-        public void DeleteReservation(int reservationId)
+        public Reservation DeleteReservation(int reservationId)
         {
-            throw new NotImplementedException();
+
+            RestRequest request = new RestRequest(API_URL + "reservations/" + reservationId);
+            IRestResponse<Reservation> response = client.Delete<Reservation>(request);
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                Console.WriteLine("Error occurred - unable to reach server.");
+            }
+            else if (!response.IsSuccessful)
+            {
+                Console.WriteLine("Error occurred - received non-success response: " + (int)response.StatusCode);
+            }
+            else
+            {
+                return response.Data;
+            }
+            return null;
         }
     }
 }

@@ -25,7 +25,22 @@ namespace WorldGeography.DAL
 
         public IList<Country> GetCountries(string continent)
         {
-            throw new NotImplementedException();
+            List<Country> List = new List<Country();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT name FROM country WHERE continent @continent", conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+
+                        Country c = convertReaderToCountry(reader)
+                            list.Add(c)
+                    }
+                }
+            }
         }
     }
 }

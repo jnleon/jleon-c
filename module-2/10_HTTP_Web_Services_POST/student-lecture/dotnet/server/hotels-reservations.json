@@ -137,6 +137,14 @@
       "checkinDate": "04/15/2021",
       "checkoutDate": "04/21/2021",
       "guests": 4
+    },
+    {
+      "HotelId": 1,
+      "fullName": "miaw Smith",
+      "checkinDate": "10/10/2022",
+      "checkoutDate": "10/12/2022",
+      "guests": 20,
+      "Id": 704
     }
   ]
 }

@@ -19,7 +19,12 @@ VALUES ('EUCLIDEAN PI', 'The epic story of Euclid as a pizza delivery boy in anc
 
 INSERT INTO film_actor(film_id, actor_id)
 VALUES((SELECT film_id FROM film WHERE title ='EUCLIDEAN PI'), (SELECT actor_id FROM actor WHERE first_name= 'HAMPTON' AND last_name= 'AVENUE')),
-((SELECT film_id FROM film WHERE title ='EUCLIDEAN PI'), (SELECT actor_id FROM actor WHERE first_name= 'LISA' AND last_name= 'BYWAY'));
+	((SELECT film_id FROM film WHERE title ='EUCLIDEAN PI'), (SELECT actor_id FROM actor WHERE first_name= 'LISA' AND last_name= 'BYWAY'));
+
+/*
+EQUAL TO
+VALUES((1001),(201)), ((1001),(202))
+*/
 
 -- 4. Add Mathmagical to the category table.
 INSERT INTO category(name)

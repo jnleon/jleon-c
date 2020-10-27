@@ -46,23 +46,29 @@ namespace HTTP_Web_Services_GET_lecture
                 }
                 else if (menuSelection == 2)
                 {
-                    Console.WriteLine("Not implemented");
+                    List<Review> reviews = GetReviews();
+                    PrintReviews(reviews);
                 }
                 else if (menuSelection == 3)
                 {
-                    Console.WriteLine("Not implemented");
+                   Hotel hotel1 = ReviewId1();
+                   PrintHotel(hotel1);
                 }
                 else if (menuSelection == 4)
                 {
-                    Console.WriteLine("Not implemented");
+                    List <Review> reviews = ReviewId2();
+                    PrintReviews(reviews);
                 }
                 else if (menuSelection == 5)
                 {
-                    Console.WriteLine("Not implemented");
+                    List<Hotel> reviews = ReviewId3();
+                    PrintHotels(reviews);
                 }
                 else if (menuSelection == 6)
                 {
-                    Console.WriteLine("Not implemented - Create a custom Web API query here");
+                    City city = GetCityFromPublicAPI();
+                    PrintCity(city);
+                    
                 }
                 else
                 {
@@ -72,10 +78,47 @@ namespace HTTP_Web_Services_GET_lecture
             }
         }
 
+       
+
+
+
+
 
         //API methods:
+        private static List<Review> GetReviews()
+        {
+            RestRequest request = new RestRequest(API_URL + "reviews");
+            IRestResponse<List<Review>> response = client.Get<List<Review>>(request);
+            return response.Data;
+        }
 
+        private static Hotel ReviewId1()
+        {
+            RestRequest request = new RestRequest(API_URL + "hotels/1");
+            IRestResponse<Hotel> response = client.Get<Hotel>(request);
+            return response.Data;
+        }
 
+        private static List<Review> ReviewId2()
+        {
+            RestRequest request = new RestRequest(API_URL + "hotels/1/reviews");
+            IRestResponse <List<Review>> response = client.Get <List<Review>>(request);
+            return response.Data;
+        }
+
+        private static List<Hotel> ReviewId3()
+        {
+            RestRequest request = new RestRequest(API_URL + "hotels?stars=3");
+            IRestResponse<List<Hotel>> response = client.Get<List<Hotel>>(request);
+            return response.Data;
+        }
+
+        private static City GetCityFromPublicAPI()
+        {
+            RestRequest request = new RestRequest("https://api.teleport.org/api/cities/?search=cincinnati");
+            IRestResponse <City> response = client.Get<City>(request);
+            return response.Data;
+        }
 
 
 

@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using WorldGeography.DAL;
 using WorldGeography.Models;
 using WorldGeography.Tests.DAL;
@@ -33,15 +34,18 @@ namespace WorldGeography.Tests
         public void AddLanguage()
         {
             // Arrange
+            Language lang = new Language();
+            lang.CountryCode = "USA";
+            lang.IsOfficial = false;
+            lang.Name = "miaw";
+            lang.Percentage = 5;
 
-
-
+            ILanguageDAO dao = new LanguageSqlDAO(ConnectionString);
             // Act
-
-
+            bool result = dao.AddNewLanguage(lang);
 
             // Assert
-            Assert.Fail(); //remove me
+            Assert.IsTrue(result);
 
 
         }
@@ -50,16 +54,15 @@ namespace WorldGeography.Tests
         [ExpectedException(typeof(SqlException))]
         public void AddLanguage_FailsBecauseLanguageExists()
         {
-            // Arrange
+            //ARRANGE
+            ILanguageDAO dao = new LanguageSqlDAO(ConnectionString);
+            ICollection<Language> allUSLanguages = dao.GetLanguages("USA");
+           
+            //ACT
+            Language dup = allUSLanguages.ToArray()[0];
+            dao.AddNewLanguage(dup);
 
 
-
-            // Act
-
-
-
-            // Assert
-            // SqlException is expected to be thrown
         }
 
         [TestMethod]
@@ -67,15 +70,22 @@ namespace WorldGeography.Tests
         {
             // Arrange
 
+            ILanguageDAO dao = new LanguageSqlDAO(ConnectionString);
+           
+            Language lang = new Language();
+            lang.CountryCode = "USA";
+            lang.IsOfficial = false;
+            lang.Name = "miaw";
+            lang.Percentage = 5;
 
 
             // Act
-
-
+            bool result = dao.RemoveLanguage(lang);
+            int beforeRowCount = GetRowCount("countrylanguage");
 
             // Assert
-            Assert.Fail(); //remove me
-
+            Assert.IsTrue(result); //remove me
+            Assert.AreEqual(beforeRowCount - 1, GetRowCount("countrylanguage"));
 
         }
 

@@ -20,11 +20,7 @@ namespace AuctionApp
         public Auction GetDetailsForAuction(int auctionId)
         {
             RestRequest request = new RestRequest(API_URL + "auctions/" +auctionId);
-            request.AddJsonBody()
             IRestResponse<Auction> response = client.Get<Auction>(request);
-         
-
-
             return response.Data;
         }
 

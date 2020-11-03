@@ -145,11 +145,22 @@ namespace AuctionApp
         {
             if (response.ResponseStatus != ResponseStatus.Completed)
             {
-                return "Error occurred - unable to reach server.";
+                return UNAUTHORIZED_MSG;
+                //return "Error occurred - unable to reach server.";
             }
             else if (!response.IsSuccessful)
             {
-                return OTHER_4XX_MSG + (int)response.StatusCode;
+                if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    return UNAUTHORIZED_MSG;
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
+                {
+                    return FORBIDDEN_MSG;
+                }
+                else { 
+                return OTHER_4XX_MSG +(int)response.StatusCode;
+                }
             }
             return "";
         }
@@ -158,7 +169,17 @@ namespace AuctionApp
         {
 
 
-            IRestResponse<API_User> response = null;
+            var credentials = new
+            {
+                username = submittedName,
+                password = submittedPass
+            };
+
+
+            RestRequest request = new RestRequest((API_BASE_URL + "login"));
+            request.AddJsonBody(credentials);
+            IRestResponse<API_User> response = client.Post<API_User>(request); ;
+
 
             if (response.ResponseStatus != ResponseStatus.Completed)
             {
@@ -180,7 +201,7 @@ namespace AuctionApp
             else
             {
                 user.Token = response.Data.Token;
-
+                client.Authenticator = new JwtAuthenticator(response.Data.Token);
                 return response.Data;
             }
         }

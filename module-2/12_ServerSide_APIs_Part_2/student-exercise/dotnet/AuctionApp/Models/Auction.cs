@@ -19,3 +19,4 @@ namespace AuctionApp.Models
         public double CurrentBid { get; set; }
     }
 }
+ 

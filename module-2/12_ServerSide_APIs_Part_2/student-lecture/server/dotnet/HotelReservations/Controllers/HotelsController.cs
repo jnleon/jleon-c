@@ -105,6 +105,13 @@ namespace HotelReservations.Controllers
             Reservation added = reservationDao.Create(reservation);
             return Created($"/reservations/{added.Id}", added);
         }
+       
+        [HttpDelete("reservations/{id}")]
+        public ActionResult<Reservation> AddReservation(Reservation reservation)
+        {
+            Reservation added = reservationDao.Create(reservation);
+            return Created($"/reservations/{added.Id}", added);
+        }
 
     }
 }

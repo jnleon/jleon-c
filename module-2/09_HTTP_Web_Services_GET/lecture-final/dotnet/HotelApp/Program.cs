@@ -91,7 +91,6 @@ namespace HTTP_Web_Services_GET_lecture
         }
 
 
-
         //API methods:
         private static List<Hotel> GetHotels()
         {

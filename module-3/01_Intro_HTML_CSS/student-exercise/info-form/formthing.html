@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations</title>
+    <link rel="stylesheet" href="styles\styles.css" />
+</head>
+
+<body id= "boomBoom">
+
+    <header>
+        <h1> Information Form</h1>
+        <p>Submit Info about you!</p>
+    </header>
+
+    <main id="mainhere">
+        
+        <form method="POST" action="/api/information">
+            <section id="infoForm">
+                <ul>
+                    <h2>Information Form</h2>
+                    <div>
+                        <label for="name">Name:</label>
+                        <input id="name" type="text" name="name" />
+                    </div>
+                    <div>
+                        <label for="email">Email: </label>
+                        <input id="email" name="email" type="text" />
+                    </div>
+                    <div>
+                        <label for="reservationDate">Date of birth: </label>
+                        <input id="reservationDate" name="reservationDate" type="date" />
+                    </div>
+                    <div>
+                        <label for="favoriteColor">Favorite color: </label>
+                        <input id="favoriteColor" name="favoriteColor" type="color" />
+                    </div>
+                    <div>
+                        <label for="favoriteNumber">Favorite number: </label>
+                        <input id="favoriteNumber" name="favoriteNumber" type="number" />
+                    </div>
+                    <div>
+                        <label for="specialOccasion">Confirm data is correct: </label>
+                        <input id="specialOccasion" name="specialOccasion" type="checkbox" />
+                    </div>
+                    <div>
+                        <input type="submit" />
+                    </div>
+                </ul>
+            </section>
+        </form>
+    </main>
+
+</body>
+
+</html>

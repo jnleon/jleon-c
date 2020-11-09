@@ -1,0 +1,93 @@
+body{
+background-image: url("../../img/91170934f3219f6f21c988a6e28b3ad1.jpg") ;
+background-repeat: no-repeat;
+background-attachment: fixed;
+text-align: center;
+background-size: cover;
+
+}
+#TitlePage{
+font-size: 40px;
+font-family: Georgia, 'Times New Roman', Times, serif;
+color:red;
+text-align: center;
+text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+header{
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:red;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    text-align: center;
+    }
+#riggyphoto{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 600px;
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    border: 4px solid red;
+    box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#tablegang{
+    
+    table-layout: auto;    
+    border: 1px solid red;
+    text-align: left;
+    color:black;
+    margin-top: 2pc;
+    margin-left: auto;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    margin-right: auto;
+    font-size: 1.5pc;
+    border-spacing: 1pc;
+    background-color:red;
+    box-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+#riggsVideo{
+    border: 2px solid red;
+}
+thead,
+th {
+    color: #fff;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.headers{
+    font-size: 30px;
+    line-height: 3pc;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:red;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: center;
+    font-style: underline;
+}
+u{
+      color:red;
+}
+#quotes{ font-size: 30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif;
+    color:red;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+li{
+    width: 10%;
+    
+    margin: auto;
+    font-size: 30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+    color:red;
+    text-align: left;
+}
+ul{
+    margin-block-start: 0px;
+}
+#mainhere{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    line-height: 2pc;
+    background-color:grey;
+}

@@ -50,3 +50,122 @@ header img {
 #student-picture img{
     border-radius: 50%;
 }
+#main-grid{
+display:grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-areas: 
+    "headline headline img"
+    "quote quote img"
+    "profile profile contact"
+    "experience experience experience";
+row-gap: 20px;
+column-gap: 50px;
+align-items: center;
+}
+
+#experience-grid{
+display: grid;
+grid-area:experience;
+grid-template-columns: 1fr 1fr;
+grid-template-areas: 
+    "code code"
+    "database database"
+    "web design";
+row-gap: 20px;
+column-gap: 50px;
+}
+
+#headline{
+    grid-area: headline;
+}
+
+#student-quote{
+    grid-area: quote;
+}
+
+#student-profile{
+    grid-area:profile;
+}
+
+#student-picture{
+    grid-area: img;
+    text-align: center;
+}
+
+#student-contact{
+    grid-area: contact;
+    text-align: center;
+}
+
+#experience-code{
+    grid-area:code;
+}
+
+#experience-database{
+grid-area:database;
+}
+
+#experience-web{
+grid-area: web ;
+}
+
+#experience-design{
+    grid-area: design ;
+}
+
+@media screen and (max-width: 1024px){
+    #main-grid{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "headline headline"
+        "quote img"
+        "quote contact"
+        "profile profile"
+        "experience experience ";
+        column-gap: 35px;
+    }
+    #experience-grid{
+        display: grid;
+        grid-area:experience;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "code web"
+        "database design"
+        ;
+        row-gap: 20px;
+        column-gap: 20px;
+    }   
+}
+
+@media screen and (max-width: 450px){
+    #main-grid{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "headline "
+        "img"
+        "contact"
+        "quote"
+        "profile"
+        "experience";
+   
+    }       
+    #experience-grid{
+        display: grid;
+        grid-area:experience;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "code"
+        "web"
+        "database"
+        "design"
+        ;
+    }
+}
+
+
+
+/*student-picture is on the same rows 
+as the headline and student-quote, and how 
+student-contact is on the same row as student-profile.*/

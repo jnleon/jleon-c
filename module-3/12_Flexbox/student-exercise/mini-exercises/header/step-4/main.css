@@ -1,3 +1,19 @@
+
+
+.my-account img {
+  width: 32px;
+}
+header{display:flex;
+flex-direction: row;
+}
+
+header nav ul{display:flex;
+flex-direction: row;
+justify-content: flex-end;}
+
+
+asdasdasdasdas
+
 body {
   margin: 20px;
   padding: 0
@@ -12,10 +28,16 @@ header {
   width: 140px;
 }
 
+nav {
+  flex-grow: 1;
+}
+
 ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
+   display: flex;
+  flex-direction: row;
 }
 
 li {
@@ -27,19 +49,26 @@ li {
   margin-left: 20px;
 }
 
-li a,
-li a:visited {
+a,
+a:visited {
   color: #707070;
   text-decoration: none;
 }
 
-li a:hover {
+a:hover {
   color: #00AFEF;
   text-decoration: underline;
 }
 
-.spacer {}
-
-.my-account img {
-  width: 32px;
+header, ul{
+  display: flex;
+  justify-content: center;
+}
+header{
+  display: flex;
+  justify-content: flex-start;
+}
+header nav ul{
+ 
+  justify-content: flex-start;
 }

@@ -59,10 +59,14 @@ argument is unused.
 */
 function titleCase(x, y) {
     let array = x.split(' ');
+    
     let lowerCase = [];
+    
     let first_upperCase = [];
     let string = '';
     let excludeList = [];
+    
+    
     for (let i = 0; i < array.length; i++) {
         lowerCase.push(array[i].toLowerCase());
     }

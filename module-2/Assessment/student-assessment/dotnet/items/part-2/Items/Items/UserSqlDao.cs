@@ -62,9 +62,12 @@ namespace Items
                     cmd.Parameters.AddWithValue("@role", newUser.Role);
                     cmd.Parameters.AddWithValue("@created", newUser.Created) ;
 
- 
+
                     int numRowsAffected = cmd.ExecuteNonQuery();
                     Console.WriteLine("Number of rows affected: " + numRowsAffected);
+                    cmd = new SqlCommand("SELECT MAX(id) FROM users;", conn);
+                  
+                    newUser.Id = Convert.ToInt32(cmd.ExecuteScalar());
 
                 }
             }

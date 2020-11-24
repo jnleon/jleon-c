@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   displayGroceries();
 
 
-const groceries = document.querySelectorAll('li')
+const groceries = document.querySelectorAll('li');
 
 groceries.forEach((task) => {
 
@@ -63,13 +63,11 @@ groceries.forEach((task) => {
 })
 //mark all 
 const completeAll = document.getElementById('toggleAll');
-
-
 completeAll.addEventListener('click',() =>{
   if(allItemsIncomplete ==true){
   groceries.forEach((task)=> {
     task.classList.add('completed')
-    task.querySelector('i').classList.add('completed')
+    task.querySelectorAll('i').classList.add('completed')
     allItemsIncomplete = false;
     toggleAll.innerText = 'Mark All Incomplete';
 

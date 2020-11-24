@@ -37,6 +37,7 @@ padding-left: 20px;
 padding-right: 20px;
 }
 
+
 aside li{
   list-style: none;
   text-align: center;
@@ -47,7 +48,7 @@ aside li{
   width: 80%;
   line-height: 2;
 }
-
+ 
 li a{
    font-weight: bold;
    color:#00ADEE;
@@ -58,7 +59,7 @@ li a:hover{
 text-decoration: underline;
 }
 
-header{
+header{ 
   height: 120px;
 }
 

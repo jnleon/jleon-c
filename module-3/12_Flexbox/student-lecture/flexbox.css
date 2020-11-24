@@ -1,0 +1,44 @@
+body,
+#hero footer, 
+#featured section,
+#featured section article div, 
+#all-items section,
+#all-items section article{
+    display:flex;       
+}   
+body,
+#all-items section{
+    flex-direction: column;
+}
+/*center things horizontally*/
+body{
+    align-items: center;
+}
+/* center the icon*/
+/*center the articles in all menu items*/
+#featured section article div,
+#all-items section article{
+    justify-content: center;
+}
+/*center things vertically*/
+#hero footer,
+#all-items section article {
+    align-items:center;
+}
+#hero footer{
+    justify-content: space-around;
+}
+#all-items article div:last-child{
+flex-basis:80%
+}
+#all-items article:nth-child(even){
+flex-direction:row-reverse;
+}
+@media only screen and(max-width: 1024px){
+#featured section{
+    flex-wrap: wrap;
+}
+#featured section article:nth-child(even){
+    border: none;
+}
+}

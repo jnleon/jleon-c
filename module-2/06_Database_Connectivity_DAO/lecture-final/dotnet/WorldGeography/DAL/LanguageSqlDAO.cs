@@ -73,7 +73,7 @@ namespace WorldGeography.DAL
                     // create a sql command to add a new language
                     SqlCommand cmd = new SqlCommand("INSERT INTO countrylanguage(countrycode,language,isofficial,percentage)" +
                                                    " VALUES(@countryCode,@language,@isOfficial,@percentage)", conn);
-                    cmd.Parameters.AddWithValue("@countryCode", newLanguage.CountryCode);
+                     cmd.Parameters.AddWithValue("@countryCode", newLanguage.CountryCode);
                     cmd.Parameters.AddWithValue("@language", newLanguage.Name);
                     cmd.Parameters.AddWithValue("@isOfficial", newLanguage.IsOfficial);
                     cmd.Parameters.AddWithValue("@percentage", newLanguage.Percentage);

@@ -15,7 +15,7 @@
       <tbody>
         <tr>
           <td>
-            <input type="checkbox" id="selectAll" />
+            <input type="checkbox" id="selectAll" v-on:change="selectAll" value:unchecked />
           </td>
           <td>
             <input type="text" id="firstNameFilter" v-model="filter.firstName" />
@@ -44,7 +44,7 @@
           v-bind:class="{ disabled: user.status === 'Disabled' }"
         >
           <td>
-            <input type="checkbox" v-bind:id="user.id" v-bind:value="user.id" />
+            <input type="checkbox" v-bind:id="user.id" v-bind:value="user.id" v-model="selectedUserIDs"/>
           </td>
           <td>{{ user.firstName }}</td>
           <td>{{ user.lastName }}</td>
@@ -52,21 +52,21 @@
           <td>{{ user.emailAddress }}</td>
           <td>{{ user.status }}</td>
           <td>
-            <button class="btnEnableDisable">Enable or Disable</button>
+            <button v-on:click.prevent="flipStatus(user.id)" class="btnEnableDisable">{{ user.status == "Disabled" ? "Enable" : "Disable" }}</button>
           </td>
         </tr>
       </tbody>
     </table>
 
-    <div class="all-actions">
-      <button>Enable Users</button>
-      <button>Disable Users</button>
-      <button>Delete Users</button>
+    <div class="all-actions" >
+      <button :disabled = actionButtonDisabled v-on:click.prevent="enableSelectedUsers" >Enable Users</button>
+      <button :disabled = actionButtonDisabled v-on:click.prevent="disableSelectedUsers">Disable Users</button>
+      <button :disabled = actionButtonDisabled v-on:click.prevent="deleteSelectedUsers">Delete Users</button>
     </div>
 
-    <button>Add New User</button>
+    <button v-on:click.prevent="showForm = true">Add New User</button>
 
-    <form id="frmAddNewUser">
+    <form id="frmAddNewUser" v-on:submit.prevent="saveUser" v-show="showForm ===true">
       <div class="field">
         <label for="firstName">First Name:</label>
         <input type="text" name="firstName" />
@@ -93,6 +93,8 @@ export default {
   name: "user-list",
   data() {
     return {
+      selectedUserIDs:[],
+      showForm:false,
       filter: {
         firstName: "",
         lastName: "",
@@ -160,7 +162,73 @@ export default {
       ]
     };
   },
-  methods: {},
+  methods: {
+selectAll(){
+if(this.selectedUserIDs.length != this.users.length){
+this.selectedUserIDs = [];
+this.users.forEach((woof)=>{
+  this.selectedUserIDs.push(woof.id);
+})
+if(this.selectedUserIDs.length < this.users.length){
+ this.selectedUserIDs= []
+
+}
+}else{
+ this.selectedUserIDs= []
+}
+},
+enableSelectedUsers(){
+this.selectedUserIDs.forEach((id)=>{
+this.users.find((user)=>{
+  return user.id ==id
+}).status = 'Active';
+})
+this.selectedUserIDs=[];
+},
+disableSelectedUsers(){
+this.selectedUserIDs.forEach((id)=>{
+this.users.find((user)=>{
+  return user.id ==id
+}).status = 'Disabled';
+})
+this.selectedUserIDs=[];
+},
+deleteSelectedUsers(){
+
+  this.selectedUserIDs.forEach((id) => {
+  for(let i = 0; i < this.users.length; i++){
+  if(this.users[i].id === id) {
+  this.users.splice(i, 1);
+}
+}
+});
+
+},
+
+saveUser(){
+  this.users.unshift(this.newUser);
+  this.resetForm();
+},
+
+  resetForm(){
+  this.newUser={
+  id:null,
+  firstName: "",
+  lastName: "",
+  username: "",
+  emailAddress:"",
+  status:"Active"
+
+};
+this.showForm=false;
+  },
+  flipStatus(id){
+  let user = this.users.find((item)=>
+   item.id == id )
+
+  user.status == "Disabled" ? user.status = "Active" : user.status = "Disabled";
+  }
+  },
   computed: {
     filteredList() {
       let filteredUsers = this.users;
@@ -198,8 +266,15 @@ export default {
         );
       }
       return filteredUsers;
-    }
+    },
+    actionButtonDisabled(){
+  if( this.selectedUserIDs == 0){
+    return true;
   }
+  else{
+  return false;
+  
+  }}}
 };
 </script>
 

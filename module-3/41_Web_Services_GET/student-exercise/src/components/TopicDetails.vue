@@ -30,7 +30,6 @@ export default {
   },
   created(){
     const topicID = this.$route.params.id;
-
       topicService.getInfo(topicID).then(response=>{
             this.topic = response.data;
       });

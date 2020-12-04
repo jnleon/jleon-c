@@ -13,10 +13,13 @@
           <td width="80%">
             <router-link
               v-bind:to="{ name: 'Messages', params: { id: topic.id } }"
-            >{{ topic.title }}</router-link>
+              >{{ topic.title }}</router-link
+            >
           </td>
           <td>
-            <router-link :to="{ name: 'EditTopic', params: {id: topic.id} }">Edit</router-link>
+            <router-link :to="{ name: 'EditTopic', params: { id: topic.id } }"
+              >Edit</router-link
+            >
           </td>
           <td>
             <a href="#" v-on:click="deleteTopic(topic.id)">Delete</a>
@@ -34,15 +37,39 @@ export default {
   name: "topic-list",
   methods: {
     getTopics() {
-      topicService.list().then(response => {
+      topicService.list().then((response) => {
         this.$store.commit("SET_TOPICS", response.data);
       });
     },
-    deleteTopic(id) {}
+    deleteTopic(id) {
+       
+        topicService
+          .deleteTopics(id)
+          .then((response) => {
+            if (response.status === 200) {
+            this.getTopics();  
+            }
+          })
+          .catch((error) => {
+            if (error.response) {
+              this.errorMsg =
+                "Error deleting topic. Response received was '" +
+                error.response.statusText +
+                "'.";
+            } else if (error.request) {
+              this.errorMsg =
+                "Error deleting topic. Server could not be reached.";
+            } else {
+              this.errorMsg =
+                "Error deleting topic. Request could not be created.";
+            }
+          });
+      
+    },
   },
   created() {
     this.getTopics();
-  }
+  },
 };
 </script>
 

@@ -32,8 +32,31 @@ export default {
     topicId: Number
   },
   methods: {
-    deleteMessage(id) {}
-  },
+    deleteMessage(id) {
+     
+            messageService.deleteMessage(id).then(response => {
+            if (response.status === 200) {
+              this.$router.push(`/messages/`);
+              this.$store.commit("DELETE_MESSAGE", id);
+            }
+          })
+          .catch(error => {
+            if (error.response) {
+              this.errorMsg =
+                "Error deleting message. Response received was '" +
+                error.response.statusText +
+                "'.";
+            } else if (error.request) {
+              this.errorMsg =
+                "Error deleting message. Server could not be reached.";
+            } else {
+              this.errorMsg =
+                "Error deleting message. Request could not be created.";
+            }
+          });
+        }
+    }
+  ,
   created() {
     topicService
       .get(this.topicId)

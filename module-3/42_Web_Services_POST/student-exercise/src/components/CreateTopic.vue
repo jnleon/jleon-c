@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import topicService from "../services/TopicService";
+import TopicService from "../services/TopicService.js";
 
 export default {
   name: "create-topic",
@@ -19,13 +19,33 @@ export default {
     return {
       topic: {
         id: Math.floor(Math.random() * (1000 - 100) + 100),
-        title: ""
-      }
+        title: "",
+      },
     };
   },
   methods: {
-    saveTopic() {}
-  }
+    saveTopic() {
+      TopicService.addTopics(this.topic)
+        .then((response) => {
+          if (response.status === 201) {
+            this.$router.push("/");
+          }
+        })
+        .catch((error) => {
+          if (error.response) {
+            this.errorMsg =
+              "Error adding topic. Response from server was " +
+              error.response.statusText +
+              ".";
+          } else if (error.request) {
+            this.errorMsg = "Error adding topic. Could not reach server.";
+          } else {
+            this.errorMsg =
+              "Error adding new topic. Request could not be created.";
+          }
+        });
+    },
+  },
 };
 </script>
 

@@ -32,6 +32,25 @@ export default {
   },
   methods: {
     saveMessage() {
+    messageService.addMessage(this.message)
+        .then((response) => {
+          if (response.status === 201) {
+            this.$router.push(`/${this.topicId}`);
+          }
+        })
+        .catch((error) => {
+          if (error.response) {
+            this.errorMsg =
+              "Error adding message. Response from server was " +
+              error.response.statusText +
+              ".";
+          } else if (error.request) {
+            this.errorMsg = "Error adding message. Could not reach server.";
+          } else {
+            this.errorMsg =
+              "Error adding new message. Request could not be created.";
+          }
+        });
 
     }
   }

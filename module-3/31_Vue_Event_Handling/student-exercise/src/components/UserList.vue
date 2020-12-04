@@ -182,6 +182,7 @@ this.selectedUserIDs.forEach((id)=>{
 this.users.find((user)=>{
   return user.id ==id
 }).status = 'Active';
+
 })
 this.selectedUserIDs=[];
 },
@@ -227,7 +228,7 @@ this.showForm=false;
    item.id == id )
 
   user.status == "Disabled" ? user.status = "Active" : user.status = "Disabled";
-  }
+  } 
   },
   computed: {
     filteredList() {
